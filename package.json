@@ -1,0 +1,28 @@
+{
+  "name": "smartcontracttemplates",
+  "version": "1.0.0",
+  "description": "tempaltes for smart contracts of different use cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zCode-Solutions/SmartContractTemplates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zCode-Solutions/SmartContractTemplates/issues"
+  },
+  "homepage": "https://github.com/zCode-Solutions/SmartContractTemplates#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.1",
+    "hardhat": "^2.7.0"
+  }
+}
