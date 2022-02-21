@@ -13,3 +13,13 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+# INSTRUCTIONS To run
+
+main contracts located in contracts/nft_mint.sol
+
+tools needed to run?
+
+1. remix ide
+2. ganache
+3. tenderly
