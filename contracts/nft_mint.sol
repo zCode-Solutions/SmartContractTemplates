@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.6;
 import "./ERC721.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import "./utils/Counters.sol";
+import "./utils/Ownable.sol";
 import "./HasTokenURI.sol";
 
 
 contract KITT_CONTRACT is ERC721, Ownable, HasTokenURI {
     // Token name
-    string private _name = "KITT TEST";
+    string private _name;
 
     // Token symbol
-    string private _symbol = "KITT";
+    string private _symbol;
 
     //increment tokenId
     using Counters for Counters.Counter;
@@ -27,28 +27,10 @@ contract KITT_CONTRACT is ERC721, Ownable, HasTokenURI {
         _symbol = symbol_;
     }
 
-    modifier validDestination( address to ) {
-        require(to != address(0x0));
-        require(to != address(this) );
-        _;
-    }
-
     function mint(address to, string memory tokenURI) public {
-        super._mint(to, _tokenIds.current());
-        super._setTokenURI(_tokenIds.current(), tokenURI);
+        ERC721._mint(to, _tokenIds.current());
+        HasTokenURI._setTokenURI(_tokenIds.current(), tokenURI);
         _tokenIds.increment();
     }
 
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        override
-        returns (string memory)
-    {
-        require(
-            _exists(tokenId),
-            "ERC721Metadata: URI query for nonexistent token"
-        );
-        return string(abi.encodePacked(_baseURIextended, _tokenURIs[tokenId]));
-    }
 }
