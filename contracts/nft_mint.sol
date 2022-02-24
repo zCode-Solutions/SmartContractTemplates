@@ -33,4 +33,6 @@ contract KITT_CONTRACT is ERC721, Ownable, HasTokenURI {
         _tokenIds.increment();
     }
 
+    function supportsInterface()
+
 }

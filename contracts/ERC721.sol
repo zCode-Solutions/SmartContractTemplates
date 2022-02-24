@@ -57,6 +57,7 @@ import "./ERC165.sol";
      */
     function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165, IERC165) returns (bool) {
         return
+            interfaceId == 0x2a55205a ||
             interfaceId == type(IERC721).interfaceId ||
             interfaceId == type(IERC721Metadata).interfaceId ||
             super.supportsInterface(interfaceId);
